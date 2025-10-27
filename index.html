@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda R&A - Limpieza y Herramientas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        header {
+            background-color: #111;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 6px rgba(255, 215, 0, 0.3);
+        }
+        header h1 {
+            color: #FFD700;
+            font-size: 1.8rem;
+        }
+        nav a {
+            color: #fff;
+            margin-left: 1.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            color: #FFD700;
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1200x500') center/cover no-repeat;
+            color: #FFD700;
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .section {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .section h2 {
+            color: #FFD700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .product-card {
+            background-color: #111;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #FFD700;
+            transition: transform 0.3s;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+        .product-card img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .product-card h3 {
+            margin: 1rem 0 0.5rem 0;
+        }
+        .product-card p {
+            font-weight: bold;
+            color: #FFD700;
+        }
+        .product-card button {
+            margin-top: 1rem;
+            padding: 0.6rem 1.2rem;
+            background-color: #FFD700;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .product-card button:hover {
+            background-color: #e6c200;
+        }
+        footer {
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+        .whatsapp-button:hover {
+            background-color: #1ebe57;
+        }
+        @media(max-width:768px){
+            header {
+                flex-direction: column;
+            }
+            nav {
+                margin-top: 1rem;
+            }
+        }
+    </style>
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+    <header>
+        <h1>R&A Productos</h1>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <h2>Bienvenido a R&A</h2>
+        <p>Soluciones premium en limpieza y herramientas</p>
+    </section>
+
+    <section class="section" id="productos">
+        <h2>Productos Destacados</h2>
+        <div class="products">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200x150" alt="Limpiador Multiuso">
+                <h3>Limpiador Multiuso</h3>
+                <p>$50.000</p>
+                <button onclick="addToCart('Limpiador Multiuso', 50000)">Agregar al carrito</button>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200x150" alt="Aromatizador">
+                <h3>Aromatizador</h3>
+                <p>$35.000</p>
+                <button onclick="addToCart('Aromatizador', 35000)">Agregar al carrito</button>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200x150" alt="Juego de Herramientas">
+                <h3>Juego de Herramientas</h3>
+                <p>$120.000</p>
+                <button onclick="addToCart('Juego de Herramientas', 120000)">Agregar al carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contacto">
+        <h2>Contacto</h2>
+        <p>Para pedidos y consultas, contáctanos por WhatsApp.</p>
+        <a href="https://wa.me/573022357418" target="_blank" class="whatsapp-button">WhatsApp</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 R&A Productos. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        let cart = [];
+
+        function addToCart(name, price) {
+            cart.push({name, price});
+            alert(`${name} agregado al carrito.\nTotal de productos: ${cart.length}`);
+            console.log('Carrito:', cart);
+        }
+    </script>
+
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
