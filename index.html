@@ -1,202 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda R&A - Limpieza y Herramientas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* Reset básico */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #000;
-            color: #fff;
-        }
-        header {
-            background-color: #111;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 6px rgba(255, 215, 0, 0.3);
-        }
-        header h1 {
-            color: #FFD700;
-            font-size: 1.8rem;
-        }
-        nav a {
-            color: #fff;
-            margin-left: 1.5rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-        nav a:hover {
-            color: #FFD700;
-        }
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1200x500') center/cover no-repeat;
-            color: #FFD700;
-            text-align: center;
-            padding: 6rem 2rem;
-        }
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        .section {
-            padding: 3rem 2rem;
-            max-width: 1200px;
-            margin: auto;
-        }
-        .section h2 {
-            color: #FFD700;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        .product-card {
-            background-color: #111;
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-            border: 2px solid #FFD700;
-            transition: transform 0.3s;
-        }
-        .product-card:hover {
-            transform: scale(1.05);
-        }
-        .product-card img {
-            max-width: 100%;
-            border-radius: 5px;
-        }
-        .product-card h3 {
-            margin: 1rem 0 0.5rem 0;
-        }
-        .product-card p {
-            font-weight: bold;
-            color: #FFD700;
-        }
-        .product-card button {
-            margin-top: 1rem;
-            padding: 0.6rem 1.2rem;
-            background-color: #FFD700;
-            color: #000;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .product-card button:hover {
-            background-color: #e6c200;
-        }
-        footer {
-            background-color: #111;
-            color: #fff;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-        .whatsapp-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25D366;
-            color: #fff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            transition: 0.3s;
-        }
-        .whatsapp-button:hover {
-            background-color: #1ebe57;
-        }
-        @media(max-width:768px){
-            header {
-                flex-direction: column;
-            }
-            nav {
-                margin-top: 1rem;
-            }
-        }
-    </style>
-<link type="text/css" rel="stylesheet" href="css/style.css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>R&amp;A Productos y Soluciones</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header class="site-header">
+    <div class="brand">
+      <!-- Inline logo SVG -->
+      <img src="logo.svg" alt="R&A logo" class="logo">
+      <div class="brand-text">
+        <h1>R&amp;A Productos y Soluciones</h1>
+        <p class="tagline">Soluciones confiables para cada necesidad.</p>
+      </div>
+    </div>
+  </header>
 
-    <header>
-        <h1>R&A Productos</h1>
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#productos">Productos</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
-    </header>
-
-    <section class="hero" id="inicio">
-        <h2>Bienvenido a R&A</h2>
-        <p>Soluciones premium en limpieza y herramientas</p>
+  <main class="container">
+    <section id="hero" class="hero">
+      <h2>Catálogo</h2>
+      <p>Productos profesionales de limpieza, aromatizantes y herramientas.</p>
     </section>
 
-    <section class="section" id="productos">
-        <h2>Productos Destacados</h2>
-        <div class="products">
-            <div class="product-card">
-                <img src="https://via.placeholder.com/200x150" alt="Limpiador Multiuso">
-                <h3>Limpiador Multiuso</h3>
-                <p>$50.000</p>
-                <button onclick="addToCart('Limpiador Multiuso', 50000)">Agregar al carrito</button>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/200x150" alt="Aromatizador">
-                <h3>Aromatizador</h3>
-                <p>$35.000</p>
-                <button onclick="addToCart('Aromatizador', 35000)">Agregar al carrito</button>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/200x150" alt="Juego de Herramientas">
-                <h3>Juego de Herramientas</h3>
-                <p>$120.000</p>
-                <button onclick="addToCart('Juego de Herramientas', 120000)">Agregar al carrito</button>
-            </div>
+    <section id="products" class="products-grid" aria-label="Productos">
+      <!-- Product cards inserted by JS -->
+    </section>
+
+    <button id="open-cart" class="cart-btn">Carrito (<span id="cart-count">0</span>)</button>
+
+    <!-- Cart modal -->
+    <div id="cart-modal" class="cart-modal" hidden>
+      <div class="cart-content">
+        <button id="close-cart" class="close">×</button>
+        <h3>Tu carrito</h3>
+        <ul id="cart-items" class="cart-items"></ul>
+        <div class="cart-actions">
+          <strong>Total: $<span id="cart-total">0.00</span></strong>
+          <div class="cart-buttons">
+            <button id="clear-cart" class="btn">Vaciar</button>
+            <a id="whatsapp-link" class="btn whatsapp" href="#" target="_blank">Contactar por WhatsApp</a>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <section class="section" id="contacto">
-        <h2>Contacto</h2>
-        <p>Para pedidos y consultas, contáctanos por WhatsApp.</p>
-        <a href="https://wa.me/573022357418" target="_blank" class="whatsapp-button">WhatsApp</a>
-    </section>
+  </main>
 
-    <footer>
-        <p>&copy; 2025 R&A Productos. Todos los derechos reservados.</p>
-    </footer>
+  <footer class="site-footer">
+    <p>© <span id="year"></span> R&amp;A Productos y Soluciones • Contacto por WhatsApp: <a href="https://wa.me/573022357418" target="_blank">3022357418</a></p>
+  </footer>
 
-    <script>
-        let cart = [];
+  <!-- Floating WhatsApp button -->
+  <a class="whatsapp-float" href="https://wa.me/573022357418" target="_blank" aria-label="Contactar por WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20.52 3.48A11.93 11.93 0 0012 0C5.373 0 .1 5.373.1 12c0 2.115.55 4.11 1.6 5.9L0 24l6.3-1.65A11.93 11.93 0 0012 24c6.627 0 11.999-5.373 11.999-12 0-3.21-1.25-6.18-3.479-8.52z" fill="#25D366"/>
+      <path d="M17.3 14.1c-.35-.175-2.075-1.025-2.395-1.15-.32-.125-.55-.175-.78.175-.22.35-.85 1.15-1.045 1.385-.19.225-.38.25-.73.085-.35-.175-1.475-.545-2.81-1.73-1.045-.93-1.75-2.08-1.955-2.425-.2-.345-.02-.53.155-.705.16-.165.355-.43.53-.645.18-.22.235-.37.355-.615.12-.245.06-.46-.03-.645-.09-.175-.78-1.875-1.07-2.565-.285-.66-.575-.57-.78-.58l-.66-.01c-.22 0-.58.085-.885.39-.305.305-1.165 1.135-1.165 2.765 0 1.63 1.195 3.205 1.36 3.43.17.225 2.345 3.58 5.685 4.89 3.34 1.31 3.34.875 3.945.82.605-.06 1.965-.8 2.245-1.575.28-.775.28-1.445.195-1.58-.09-.135-.33-.215-.68-.39z" fill="#fff"/>
+    </svg>
+  </a>
 
-        function addToCart(name, price) {
-            cart.push({name, price});
-            alert(`${name} agregado al carrito.\nTotal de productos: ${cart.length}`);
-            console.log('Carrito:', cart);
-        }
-    </script>
-
-<script type="text/javascript" src="js/script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
